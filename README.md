@@ -5,7 +5,7 @@
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
     $('#calcform').on('submit', function(e) {
         e.preventDefault();
         $.ajax({
@@ -21,7 +21,7 @@ $(document).ready(function(){
 </script>
 ```
 
-### Код формы, получающей данные для вычисления:
+### Код формы, получающей данные для вычисления (фрагмент index.php):
 
 ```html
 <form id="calcform" name="calcform" action="index.php" method="POST">
@@ -39,7 +39,7 @@ $(document).ready(function(){
 </form>
 ```
 
-### Код, отвечающий за вычисления и вывод данных:
+### Код, отвечающий за вычисления и вывод данных (фрагмент index.php):
 
 ```php
 $a = $_POST['n1'];
@@ -77,7 +77,7 @@ case "exponentiate":
     <title>PHP Test</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#calcform').on('submit', function(e) {
             e.preventDefault();
             $.ajax({
@@ -93,11 +93,9 @@ case "exponentiate":
     </script>
   </head>
   <body>
-    <?php 
-    if ($_SERVER['REQUEST_METHOD'] === "GET")
-    {
-    ?>
-    <form id="calcform" name="calcform" action="index.php" method="POST"> 
+  <?php 
+    if ($_SERVER['REQUEST_METHOD'] === "GET") {
+      echo '<form id="calcform" name="calcform" action="index.php" method="POST"> 
     <input name="n1" type="number" placeholder="3" required pattern="1?[0-9]">
       <select name="op" id="operator">
         <option value="add">+</option>
@@ -109,10 +107,10 @@ case "exponentiate":
     <input name="n2" type="number"  placeholder="4" required pattern="1?[0-9]">
     <input type="submit">
     <div id="result"></div>
-    </form> 
-    <?php 
+    </form>';
     }
-    if ($_SERVER['REQUEST_METHOD'] === "POST"){
+
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
       $a = $_POST['n1'];
       $o = $_POST['op'];
       $b = $_POST['n2'];
@@ -139,7 +137,7 @@ case "exponentiate":
         break;
       }
     }
-    ?>
+  ?>
   </body>
 </html>
 ```
