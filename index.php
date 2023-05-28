@@ -3,7 +3,7 @@
     echo '
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>Lab 12</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
     $(document).ready(function() {
