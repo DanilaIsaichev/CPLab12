@@ -1,6 +1,6 @@
 ## Создание приложения-калькулятора, получающего данные через форму, и выводящего результаты вычислений на той же странице.
 
-### Код для асинхронной отправки данных (фрагмент index.php):
+### Код для асинхронной отправки данных (фрагмент index.html):
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,7 +21,7 @@ $(document).ready(function() {
 </script>
 ```
 
-### Код формы, получающей данные для вычисления (фрагмент index.php):
+### Код формы, получающей данные для вычисления (фрагмент index.html):
 
 ```html
 <form id="calcform" name="calcform" action="index.php" method="POST">
@@ -39,7 +39,7 @@ $(document).ready(function() {
 </form>
 ```
 
-### Код, отвечающий за вычисления и вывод данных (фрагмент index.php):
+### Код, отвечающий за вычисления и вывод данных (фрагмент index.html):
 
 ```php
 $a = $_POST['n1'];
@@ -69,9 +69,9 @@ case "exponentiate":
 }
 ```
 
-### Код приложения (index.php):
+### Код приложения (index.html):
 
-```php
+```html
 <html>
   <head>
     <title>PHP Test</title>
